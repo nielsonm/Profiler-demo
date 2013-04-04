@@ -1,4 +1,4 @@
-name = PROJECT Demo Content
+name = Profiler demo Demo Content
 core = 7.x
 package = Features
 dependencies[] = ctools
