@@ -52,7 +52,7 @@ dependencies[] = os_base
 ;
 users[admin][uid] = 1
 users[admin][name] = admin
-users[admin][mail] = admin@profiler_demo.example.com
+users[admin][mail] = admin@example.com
 users[admin][status] = 1
 users[admin][data][overlay] = 0
 
@@ -91,15 +91,145 @@ variables[pathauto_node_pattern] = ''
 ; Nodes
 ;
 ;; About page.
-;nodes[about][type] = page
-;nodes[about][title] = About
-;nodes[about][body][und][0][value] = PLACEHOLDER
-;nodes[about][body][und][0][format] = full_html
-;nodes[about][uid] = 1
-;nodes[about][language] = und
-;nodes[about][menu][enabled] = 1
-;nodes[about][menu][link_title] = About
-;nodes[about][menu][menu_name] = main-menu
-;nodes[about][menu][weight] = 0
-;nodes[about][path][alias] = about
-;nodes[about][path][pathauto] = 0
+nodes[about][type] = page
+nodes[about][title] = About
+nodes[about][body][und][0][value] = PLACEHOLDER
+nodes[about][body][und][0][format] = full_html
+nodes[about][uid] = 1
+nodes[about][language] = und
+nodes[about][menu][enabled] = 1
+nodes[about][menu][link_title] = About
+nodes[about][menu][menu_name] = main-menu
+nodes[about][menu][weight] = 0
+nodes[about][path][alias] = about
+nodes[about][path][pathauto] = 0
+
+nodes[about-us][type] = page
+nodes[about-us][title] = About Us
+nodes[about-us][body][und][0][value] = PLACEHOLDER
+nodes[about-us][body][und][0][format] = full_html
+nodes[about-us][uid] = 1
+nodes[about-us][language] = und
+nodes[about-us][menu][enabled] = 1
+nodes[about-us][menu][link_title] = About Us
+nodes[about-us][menu][menu_name] = main-menu
+nodes[about-us][menu][weight] = 0
+nodes[about-us][path][alias] = about-us
+nodes[about-us][path][pathauto] = 0
+; Menu parent
+nodes[about-us][menu][parent] = about
+
+nodes[about-me][type] = page
+nodes[about-me][title] = About Me
+nodes[about-me][body][und][0][value] = PLACEHOLDER
+nodes[about-me][body][und][0][format] = full_html
+nodes[about-me][uid] = 1
+nodes[about-me][language] = und
+nodes[about-me][menu][enabled] = 1
+nodes[about-me][menu][link_title] = About Me
+nodes[about-me][menu][menu_name] = main-menu
+nodes[about-me][menu][weight] = 0
+nodes[about-me][path][alias] = about-me
+nodes[about-me][path][pathauto] = 0
+; Menu parent
+nodes[about-me][menu][parent] = about-us
+
+
+;; Webform node
+nodes[webform][type] = webform
+nodes[webform][title] = webform
+nodes[webform][body][und][0][value] = ''
+nodes[webform][body][und][0][format] = full_html
+nodes[webform][uid] = 1
+nodes[webform][language] = und
+nodes[webform][path][alias] = test-webform
+nodes[webform][path][pathauto] = 0
+nodes[webform][webform][components][1][type] = textfield
+nodes[webform][webform][components][1][form_key] = q_1
+nodes[webform][webform][components][1][name] = "What is your name"
+nodes[webform][webform][components][1][mandatory] = 0
+nodes[webform][webform][components][1][pid] = 0
+nodes[webform][webform][components][1][value] = "Sir Robin"
+nodes[webform][webform][components][1][weight] = 1
+nodes[webform][webform][components][1][page_num] = 1
+nodes[webform][webform][components][2][type] = select
+nodes[webform][webform][components][2][form_key] = q_2
+nodes[webform][webform][components][2][name] = "What is your favorite color?"
+nodes[webform][webform][components][2][mandatory] = 0
+nodes[webform][webform][components][2][pid] = 0
+nodes[webform][webform][components][2][weight] = 2
+nodes[webform][webform][components][2][page_num] = 1
+nodes[webform][webform][components][2][extra][items] = "red|Red
+blue|Blue
+green|Green"
+nodes[webform][webform][components][2][extra][multiple] = 1
+nodes[webform][webform][components][3][type] = textfield
+nodes[webform][webform][components][3][form_key] = q_3
+nodes[webform][webform][components][3][name] = "What is your quest?"
+nodes[webform][webform][components][3][mandatory] = 0
+nodes[webform][webform][components][3][pid] = 0
+nodes[webform][webform][components][3][value] = ""
+nodes[webform][webform][components][3][weight] = 3
+nodes[webform][webform][components][3][page_num] = 1
+nodes[webform][webform][components][4][type] = textfield
+nodes[webform][webform][components][4][form_key] = q_4
+nodes[webform][webform][components][4][name] = "What is the capital of Assyria?"
+nodes[webform][webform][components][4][mandatory] = 0
+nodes[webform][webform][components][4][pid] = 0
+nodes[webform][webform][components][4][value] = ""
+nodes[webform][webform][components][4][weight] = 4
+nodes[webform][webform][components][4][page_num] = 1
+nodes[webform][webform][components][5][type] = textfield
+nodes[webform][webform][components][5][form_key] = q_5
+nodes[webform][webform][components][5][name] = "What is the average airspeed velocity of an unladen swallow?"
+nodes[webform][webform][components][5][mandatory] = 0
+nodes[webform][webform][components][5][pid] = 0
+nodes[webform][webform][components][5][value] = "African or European?"
+nodes[webform][webform][components][5][weight] = 5
+nodes[webform][webform][components][5][page_num] = 1
+nodes[webform][webform][components][6][type] = pagebreak
+nodes[webform][webform][components][6][form_key] = q_6
+nodes[webform][webform][components][6][name] = "Break"
+nodes[webform][webform][components][6][mandatory] = 0
+nodes[webform][webform][components][6][pid] = 0
+nodes[webform][webform][components][6][weight] = 6
+nodes[webform][webform][components][6][page_num] = 2
+nodes[webform][webform][components][7][type] = textfield
+nodes[webform][webform][components][7][form_key] = q_7
+nodes[webform][webform][components][7][name] = "What is your squire's name?"
+nodes[webform][webform][components][7][mandatory] = 0
+nodes[webform][webform][components][7][pid] = 0
+nodes[webform][webform][components][7][value] = ""
+nodes[webform][webform][components][7][weight] = 7
+nodes[webform][webform][components][7][page_num] = 2
+nodes[webform][webform][components][8][type] = textfield
+nodes[webform][webform][components][8][form_key] = q_8
+nodes[webform][webform][components][8][name] = "How many knights does it take to besiege a castle?"
+nodes[webform][webform][components][8][mandatory] = 0
+nodes[webform][webform][components][8][pid] = 0
+nodes[webform][webform][components][8][value] = ""
+nodes[webform][webform][components][8][weight] = 8
+nodes[webform][webform][components][8][page_num] = 2
+nodes[webform][webform][components][9][type] = select
+nodes[webform][webform][components][9][form_key] = q_9
+nodes[webform][webform][components][9][name] = "What also floats in water?"
+nodes[webform][webform][components][9][extra][items] = "bread|Bread
+apple|Apples
+small_rocks|Very small rocks
+cider|Cider
+cherries|Cherries
+great_gravy|Great gravy
+churches|Churches
+lead|Lead
+mud|Mud
+duck|A duck"
+nodes[webform][webform][components][9][extra][multiple] = 1
+nodes[webform][webform][components][9][mandatory] = 0
+nodes[webform][webform][components][9][pid] = 0
+nodes[webform][webform][components][9][weight] = 9
+nodes[webform][webform][components][9][page_num] = 2
+nodes[webform][webform][confirmation] = "Thanks for submitting the survey."
+nodes[webform][webform][confirmation_format] = full_html
+nodes[webform][webform][roles][] = 1
+nodes[webform][webform][roles][] = 2
+nodes[webform][webform][auto_save] = 1
