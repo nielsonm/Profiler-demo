@@ -55,6 +55,9 @@ projects[mollom][version] = "2.0"
 ; Libraries.
 projects[libraries][version] = "2.1"
 
+; Webform
+projects[webform][version] = "3.18"
+
 ; Libraries
 
 ; Profiler
