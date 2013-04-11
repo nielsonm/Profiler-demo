@@ -47,6 +47,8 @@ dependencies[] = wysiwyg
 ; Features
 dependencies[] = os_base
 
+;;;  This is where the Profiler magic happens   ;;;
+
 ;
 ; Users
 ;
