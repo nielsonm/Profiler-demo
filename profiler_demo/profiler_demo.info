@@ -37,10 +37,12 @@ dependencies[] = elements
 dependencies[] = fences
 dependencies[] = html5_tools
 dependencies[] = libraries
+dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = redirect
 dependencies[] = strongarm
 dependencies[] = token
+dependencies[] = views
 dependencies[] = webform
 dependencies[] = wysiwyg
 

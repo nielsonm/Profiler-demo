@@ -22,7 +22,7 @@ includes[images] = "images.make"
 ;includes[demo] = "demo.make"
 
 ; Uncomment to use Panels.
-;includes[panels] = "panels.make"
+includes[panels] = "panels.make"
 
 ; OpenSourcery base feature.
 projects[os_base][subdir] = "stock"
