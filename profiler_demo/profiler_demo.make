@@ -70,7 +70,7 @@ libraries[profiler][patch][] = "http://drupal.org/files/1853290-support-term-par
 ; http://drupal.org/node/1921880#comment-7086568: Add support for heirarchical menus on node creation.
 libraries[profiler][patch][] = "http://drupal.org/files/profiler_heirarchical_node_menu-1921880-1.patch"
 ; http://drupal.org/node/1955904#comment-7233174: Add support for block creation.
-libraries[profiler][patch][] = "http://drupal.org/files/add_block_support-1955904.patch"
+libraries[profiler][patch][] = "http://drupal.org/files/add_block_support-1955904-5.patch"
 
 ; swfobject, JS library for embedding Flash content
 ;libraries[swfobject][download][type] = "get"
