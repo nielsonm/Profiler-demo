@@ -235,3 +235,25 @@ nodes[webform][webform][confirmation_format] = full_html
 nodes[webform][webform][roles][] = 1
 nodes[webform][webform][roles][] = 2
 nodes[webform][webform][auto_save] = 1
+
+;; Blocks ;;
+blocks[block][body] = "Here's the body field."
+blocks[block][info] = "TEST - Admin information about the block."
+blocks[block][region] = sidebar_first
+; Make sure to set the status, or the block won't be placed in the region.
+blocks[block][status] = 1
+blocks[block][title] = "Here's a test block title"
+; Sidebar second block
+blocks[block2][body] = "Here's the body field."
+blocks[block2][info] = "TEST - second block."
+; Use the region machine name.
+blocks[block2][region] = sidebar_second
+blocks[block2][status] = 1
+blocks[block2][title] = "Here's a second test block title"
+; Footer block
+blocks[footer][body] = "It's a footer block"
+blocks[footer][info] = "TEST - footer block."
+; Use the region machine name.
+blocks[footer][region] = footer
+blocks[footer][status] = 1
+blocks[footer][title] = "Footer"
