@@ -1,0 +1,261 @@
+; Project-specific installation profile
+
+name = Profiler demo
+distribution_name = Profiler demo
+description = Demo profiler install profile.
+core = 7.x
+theme = bartik
+
+; Core
+dependencies[] = block
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = dblog
+dependencies[] = entitycache
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = overlay
+dependencies[] = path
+dependencies[] = rdf
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = taxonomy
+; The admin_menu module should only be used for development purposes.
+dependencies[] = toolbar
+
+; Contrib
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = footable
+dependencies[] = elements
+dependencies[] = fences
+dependencies[] = html5_tools
+dependencies[] = libraries
+dependencies[] = panels
+dependencies[] = pathauto
+dependencies[] = redirect
+dependencies[] = strongarm
+dependencies[] = token
+dependencies[] = views
+dependencies[] = webform
+dependencies[] = wysiwyg
+
+; Features
+dependencies[] = os_base
+
+;;;  This is where the Profiler magic happens   ;;;
+
+;
+; Users
+;
+users[admin][uid] = 1
+users[admin][name] = admin
+users[admin][mail] = admin@example.com
+users[admin][status] = 1
+users[admin][data][overlay] = 0
+
+;
+; Variables
+;
+variables[site_frontpage] = node/1
+;variables[site_404] =
+variables[site_mail] = admin@profiler_demo.dev
+variables[site_name] = Profiler demo
+variables[admin_theme] = seven
+variables[node_admin_theme] = 1
+variables[site_default_country] = US
+
+; Up default log limit.
+variables[dblog_row_limit] = 1000000
+
+; Disable core image styles
+variables[os_base_remove_core_image_styles] = 1
+
+; Up image quality.
+variables[image_jpeg_quality] = 100
+
+; If needed, override default user_register setting
+; (which is 2). Possible values:
+; 0: Only administrators can create user accounts.
+; 1: Visitors can create their own accounts.
+; 2: Visitors can create accounts, but they don't become active without
+;    administrative approval.
+variables[user_register] = 0
+
+; No goofy 'content/title' default alias.
+variables[pathauto_node_pattern] = ''
+
+;
+; Nodes
+;
+;; About page.
+nodes[about][type] = page
+nodes[about][title] = About
+nodes[about][body][und][0][value] = PLACEHOLDER
+nodes[about][body][und][0][format] = full_html
+nodes[about][uid] = 1
+nodes[about][language] = und
+nodes[about][menu][enabled] = 1
+nodes[about][menu][link_title] = About
+nodes[about][menu][menu_name] = main-menu
+nodes[about][menu][weight] = 0
+nodes[about][path][alias] = about
+nodes[about][path][pathauto] = 0
+
+nodes[about-us][type] = page
+nodes[about-us][title] = About Us
+nodes[about-us][body][und][0][value] = PLACEHOLDER
+nodes[about-us][body][und][0][format] = full_html
+nodes[about-us][uid] = 1
+nodes[about-us][language] = und
+nodes[about-us][menu][enabled] = 1
+nodes[about-us][menu][link_title] = About Us
+nodes[about-us][menu][menu_name] = main-menu
+nodes[about-us][menu][weight] = 0
+nodes[about-us][path][alias] = about-us
+nodes[about-us][path][pathauto] = 0
+; Menu parent
+nodes[about-us][menu][parent] = about
+
+nodes[about-me][type] = page
+nodes[about-me][title] = About Me
+nodes[about-me][body][und][0][value] = PLACEHOLDER
+nodes[about-me][body][und][0][format] = full_html
+nodes[about-me][uid] = 1
+nodes[about-me][language] = und
+nodes[about-me][menu][enabled] = 1
+nodes[about-me][menu][link_title] = About Me
+nodes[about-me][menu][menu_name] = main-menu
+nodes[about-me][menu][weight] = 0
+nodes[about-me][path][alias] = about-me
+nodes[about-me][path][pathauto] = 0
+; Menu parent
+nodes[about-me][menu][parent] = about-us
+
+
+;; Webform node
+nodes[webform][type] = webform
+nodes[webform][title] = webform
+nodes[webform][body][und][0][value] = ''
+nodes[webform][body][und][0][format] = full_html
+nodes[webform][uid] = 1
+nodes[webform][language] = und
+nodes[webform][path][alias] = test-webform
+nodes[webform][path][pathauto] = 0
+nodes[webform][webform][components][1][type] = textfield
+nodes[webform][webform][components][1][form_key] = q_1
+nodes[webform][webform][components][1][name] = "What is your name"
+nodes[webform][webform][components][1][mandatory] = 0
+nodes[webform][webform][components][1][pid] = 0
+nodes[webform][webform][components][1][value] = "Sir Robin"
+nodes[webform][webform][components][1][weight] = 1
+nodes[webform][webform][components][1][page_num] = 1
+nodes[webform][webform][components][2][type] = select
+nodes[webform][webform][components][2][form_key] = q_2
+nodes[webform][webform][components][2][name] = "What is your favorite color?"
+nodes[webform][webform][components][2][mandatory] = 0
+nodes[webform][webform][components][2][pid] = 0
+nodes[webform][webform][components][2][weight] = 2
+nodes[webform][webform][components][2][page_num] = 1
+nodes[webform][webform][components][2][extra][items] = "red|Red
+blue|Blue
+green|Green"
+nodes[webform][webform][components][2][extra][multiple] = 1
+nodes[webform][webform][components][3][type] = textfield
+nodes[webform][webform][components][3][form_key] = q_3
+nodes[webform][webform][components][3][name] = "What is your quest?"
+nodes[webform][webform][components][3][mandatory] = 0
+nodes[webform][webform][components][3][pid] = 0
+nodes[webform][webform][components][3][value] = ""
+nodes[webform][webform][components][3][weight] = 3
+nodes[webform][webform][components][3][page_num] = 1
+nodes[webform][webform][components][4][type] = textfield
+nodes[webform][webform][components][4][form_key] = q_4
+nodes[webform][webform][components][4][name] = "What is the capital of Assyria?"
+nodes[webform][webform][components][4][mandatory] = 0
+nodes[webform][webform][components][4][pid] = 0
+nodes[webform][webform][components][4][value] = ""
+nodes[webform][webform][components][4][weight] = 4
+nodes[webform][webform][components][4][page_num] = 1
+nodes[webform][webform][components][5][type] = textfield
+nodes[webform][webform][components][5][form_key] = q_5
+nodes[webform][webform][components][5][name] = "What is the average airspeed velocity of an unladen swallow?"
+nodes[webform][webform][components][5][mandatory] = 0
+nodes[webform][webform][components][5][pid] = 0
+nodes[webform][webform][components][5][value] = "African or European?"
+nodes[webform][webform][components][5][weight] = 5
+nodes[webform][webform][components][5][page_num] = 1
+nodes[webform][webform][components][6][type] = pagebreak
+nodes[webform][webform][components][6][form_key] = q_6
+nodes[webform][webform][components][6][name] = "Break"
+nodes[webform][webform][components][6][mandatory] = 0
+nodes[webform][webform][components][6][pid] = 0
+nodes[webform][webform][components][6][weight] = 6
+nodes[webform][webform][components][6][page_num] = 2
+nodes[webform][webform][components][7][type] = textfield
+nodes[webform][webform][components][7][form_key] = q_7
+nodes[webform][webform][components][7][name] = "What is your squire's name?"
+nodes[webform][webform][components][7][mandatory] = 0
+nodes[webform][webform][components][7][pid] = 0
+nodes[webform][webform][components][7][value] = ""
+nodes[webform][webform][components][7][weight] = 7
+nodes[webform][webform][components][7][page_num] = 2
+nodes[webform][webform][components][8][type] = textfield
+nodes[webform][webform][components][8][form_key] = q_8
+nodes[webform][webform][components][8][name] = "How many knights does it take to besiege a castle?"
+nodes[webform][webform][components][8][mandatory] = 0
+nodes[webform][webform][components][8][pid] = 0
+nodes[webform][webform][components][8][value] = ""
+nodes[webform][webform][components][8][weight] = 8
+nodes[webform][webform][components][8][page_num] = 2
+nodes[webform][webform][components][9][type] = select
+nodes[webform][webform][components][9][form_key] = q_9
+nodes[webform][webform][components][9][name] = "What also floats in water?"
+nodes[webform][webform][components][9][extra][items] = "bread|Bread
+apple|Apples
+small_rocks|Very small rocks
+cider|Cider
+cherries|Cherries
+great_gravy|Great gravy
+churches|Churches
+lead|Lead
+mud|Mud
+duck|A duck"
+nodes[webform][webform][components][9][extra][multiple] = 1
+nodes[webform][webform][components][9][mandatory] = 0
+nodes[webform][webform][components][9][pid] = 0
+nodes[webform][webform][components][9][weight] = 9
+nodes[webform][webform][components][9][page_num] = 2
+nodes[webform][webform][confirmation] = "Thanks for submitting the survey."
+nodes[webform][webform][confirmation_format] = full_html
+nodes[webform][webform][roles][] = 1
+nodes[webform][webform][roles][] = 2
+nodes[webform][webform][auto_save] = 1
+
+;; Blocks ;;
+blocks[block][body] = "Here's the body field."
+blocks[block][info] = "TEST - Admin information about the block."
+blocks[block][region] = sidebar_first
+; Make sure to set the status, or the block won't be placed in the region.
+blocks[block][status] = 1
+blocks[block][title] = "Here's a test block title"
+; Sidebar second block
+blocks[block2][body] = "Here's the body field."
+blocks[block2][info] = "TEST - second block."
+; Use the region machine name.
+blocks[block2][region] = sidebar_second
+blocks[block2][status] = 1
+blocks[block2][title] = "Here's a second test block title"
+; Footer block
+blocks[footer][body] = "It's a footer block"
+blocks[footer][info] = "TEST - footer block."
+; Use the region machine name.
+blocks[footer][region] = footer
+blocks[footer][status] = 1
+blocks[footer][title] = "Footer"
