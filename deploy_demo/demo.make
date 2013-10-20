@@ -2,10 +2,19 @@
 core = "7.x"
 api = 2
 
+; Deploy
+projects[deploy][subdir] = "development"
+projects[deploy][version] = "2.0-alpha2"
+
 ; Entity Dependency API
 projects[entity_dependency][subdir] = "development"
 projects[entity_dependency][download][branch] = "7.x-1.x"
 projects[entity_dependency][download][revision] = "7ca711a"
+
+; Entity Menu Links
+projects[entity_menu_links][subdir] = "development"
+projects[entity_menu_links][download][branch] = "7.x-1.x"
+projects[entity_menu_links][download][revision] = "9dd1dd7"
 
 ; UUID
 projects[uuid][subdir] = "development"
@@ -17,6 +26,4 @@ projects[uuid][version] = "1.0-alpha5"
 ;; patch or not.
 ;; projects[uuid][patch][] = "https://drupal.org/files/1390708-10-uuid-field-insert.patch"
 
-; Deploy
-projects[deploy][subdir] = "development"
-projects[deploy][version] = "2.0-alpha2"
+
