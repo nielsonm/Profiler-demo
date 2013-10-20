@@ -19,7 +19,7 @@ includes[base] = "base.make"
 includes[images] = "images.make"
 
 ; Uncomment this to enable demo content. Do not use on production.
-;includes[demo] = "demo.make"
+includes[demo] = "demo.make"
 
 ; Uncomment to use Panels.
 includes[panels] = "panels.make"
