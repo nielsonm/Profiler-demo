@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * profiler_demo_demo_content.features.inc
+ * deploy_demo_demo_content.features.inc
  */
 
 /**
