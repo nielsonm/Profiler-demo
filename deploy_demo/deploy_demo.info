@@ -2,7 +2,7 @@
 
 name = Deploy demo
 distribution_name = Deploy demo
-description = Demo profiler install profile.
+description = Deploy-uuid based install profile.
 core = 7.x
 theme = bartik
 
