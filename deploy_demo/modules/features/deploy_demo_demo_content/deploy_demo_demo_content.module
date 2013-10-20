@@ -4,4 +4,4 @@
  * Code for the Profiler demo Demo Content feature.
  */
 
-include_once 'profiler_demo_demo_content.features.inc';
+include_once 'deploy_demo_demo_content.features.inc';

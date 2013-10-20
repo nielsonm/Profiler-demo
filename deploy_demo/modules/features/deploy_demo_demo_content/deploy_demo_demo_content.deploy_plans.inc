@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * profiler_demo_demo_content.deploy_plans.inc
+ * deploy_demo_demo_content.deploy_plans.inc
  */
 
 /**
  * Implements hook_deploy_plans_default().
  */
-function profiler_demo_demo_content_deploy_plans_default() {
+function deploy_demo_demo_content_deploy_plans_default() {
   $export = array();
 
   $plan = new DeployPlan();

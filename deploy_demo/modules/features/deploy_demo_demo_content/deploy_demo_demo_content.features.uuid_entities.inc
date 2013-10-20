@@ -7,7 +7,7 @@
 /**
  * Implements hook_uuid_default_entities().
  */
-function profiler_demo_demo_content_uuid_default_entities() {
+function deploy_demo_demo_content_uuid_default_entities() {
   $entities = array();
 
 
