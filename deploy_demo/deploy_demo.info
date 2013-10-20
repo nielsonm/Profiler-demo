@@ -1,7 +1,7 @@
 ; Project-specific installation profile
 
-name = Profiler demo
-distribution_name = Profiler demo
+name = Deploy demo
+distribution_name = Deploy demo
 description = Demo profiler install profile.
 core = 7.x
 theme = bartik
@@ -66,7 +66,7 @@ users[admin][data][overlay] = 0
 variables[site_frontpage] = node/1
 ;variables[site_404] =
 variables[site_mail] = admin@profiler_demo.dev
-variables[site_name] = Profiler demo
+variables[site_name] = Deploy demo
 variables[admin_theme] = seven
 variables[node_admin_theme] = 1
 variables[site_default_country] = US
