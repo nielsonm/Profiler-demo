@@ -37,6 +37,7 @@ dependencies[] = elements
 dependencies[] = fences
 dependencies[] = html5_tools
 dependencies[] = libraries
+dependencies[] = module_filter
 dependencies[] = panels
 dependencies[] = pathauto
 dependencies[] = redirect
