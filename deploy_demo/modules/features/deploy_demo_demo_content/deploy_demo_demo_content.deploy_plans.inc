@@ -14,7 +14,7 @@ function deploy_demo_demo_content_deploy_plans_default() {
   $plan->disabled = FALSE; /* Edit this to true to make a default plan disabled initially */
   $plan->api_version = 1;
   $plan->name = 'demo_content';
-  $plan->title = 'Demo Content';
+  $plan->title = 'Demo content';
   $plan->description = '';
   $plan->debug = 0;
   $plan->aggregator_plugin = 'DeployAggregatorManaged';

@@ -32,6 +32,7 @@ dependencies[] = toolbar
 ; Contrib
 dependencies[] = ctools
 dependencies[] = features
+dependencies[] = features_override
 dependencies[] = footable
 dependencies[] = elements
 dependencies[] = fences
@@ -91,53 +92,6 @@ variables[user_register] = 0
 
 ; No goofy 'content/title' default alias.
 variables[pathauto_node_pattern] = ''
-
-;
-; Nodes
-;
-;; About page.
-nodes[about][type] = page
-nodes[about][title] = About
-nodes[about][body][und][0][value] = PLACEHOLDER
-nodes[about][body][und][0][format] = full_html
-nodes[about][uid] = 1
-nodes[about][language] = und
-nodes[about][menu][enabled] = 1
-nodes[about][menu][link_title] = About
-nodes[about][menu][menu_name] = main-menu
-nodes[about][menu][weight] = 0
-nodes[about][path][alias] = about
-nodes[about][path][pathauto] = 0
-
-nodes[about-us][type] = page
-nodes[about-us][title] = About Us
-nodes[about-us][body][und][0][value] = PLACEHOLDER
-nodes[about-us][body][und][0][format] = full_html
-nodes[about-us][uid] = 1
-nodes[about-us][language] = und
-nodes[about-us][menu][enabled] = 1
-nodes[about-us][menu][link_title] = About Us
-nodes[about-us][menu][menu_name] = main-menu
-nodes[about-us][menu][weight] = 0
-nodes[about-us][path][alias] = about-us
-nodes[about-us][path][pathauto] = 0
-; Menu parent
-nodes[about-us][menu][parent] = about
-
-nodes[about-me][type] = page
-nodes[about-me][title] = About Me
-nodes[about-me][body][und][0][value] = PLACEHOLDER
-nodes[about-me][body][und][0][format] = full_html
-nodes[about-me][uid] = 1
-nodes[about-me][language] = und
-nodes[about-me][menu][enabled] = 1
-nodes[about-me][menu][link_title] = About Me
-nodes[about-me][menu][menu_name] = main-menu
-nodes[about-me][menu][weight] = 0
-nodes[about-me][path][alias] = about-me
-nodes[about-me][path][pathauto] = 0
-; Menu parent
-nodes[about-me][menu][parent] = about-us
 
 
 ;; Webform node

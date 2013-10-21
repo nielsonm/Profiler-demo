@@ -67,8 +67,21 @@ function deploy_demo_install() {
 
 /**
  * Tasks to run at the end of the installation process.
+ *
+ * The "first pass" install just let profiler install what it knows about,
+ * now we have some content to install and some content-dependent menu items
+ * to fiddle with.
  */
 function deploy_demo_install_profile_complete() {
+
+  require_once dirname(__FILE__) . '/deploy_demo.install.inc';
+
+  // Deploy static blocks as Boxes content.
+  //_acumed_install_boxes_content();
+
+  // Deploy entities and their associated references.
+  _deploy_demo_install_uuid_content();
+
 }
 
 /**
