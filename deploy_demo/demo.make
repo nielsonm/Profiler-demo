@@ -6,6 +6,10 @@ api = 2
 projects[deploy][subdir] = "development"
 projects[deploy][version] = "2.0-alpha2"
 
+; Entity API
+projects[entity][subdir] = "development"
+projects[entity][version] = "1.2"
+
 ; Entity Dependency API
 projects[entity_dependency][subdir] = "development"
 projects[entity_dependency][download][branch] = "7.x-1.x"
