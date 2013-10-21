@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Deploy Demo Demo Content feature.
+ */
+
+include_once 'deploy_demo_demo_content.features.inc';

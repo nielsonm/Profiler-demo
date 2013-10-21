@@ -1,0 +1,107 @@
+<?php
+/**
+ * @file
+ * Main installation logic for Profiler demo.
+ */
+
+!function_exists('profiler_v2') ? require_once 'libraries/profiler/profiler.inc' : FALSE;
+profiler_v2('deploy_demo');
+
+/**
+ * Implements hook_install_tasks_alter().
+ */
+function deploy_demo_install_tasks_alter(&$tasks) {
+  $tasks['deploy_demo_install_profile_complete'] = array();
+}
+
+/**
+ * Implements hook_install().
+ *
+ * Perform actions to set up the site for this profile.
+ */
+function deploy_demo_install() {
+  // Enable the admin theme.
+  db_update('system')
+    ->fields(array('status' => 1))
+    ->condition('type', 'theme')
+    ->condition('name', 'seven')
+    ->execute();
+
+  // Set theme.
+  $config = profiler_v2_load_config('deploy_demo');
+  $theme_name = $config['theme'];
+  variable_set('theme_default', $theme_name);
+  theme_enable(array($theme_name));
+
+  // Place the content block.
+  $blocks = array(
+    array(
+      'module' => 'system',
+      'delta' => 'main',
+      'theme' => $theme_name,
+      'status' => 1,
+      'weight' => 0,
+      'region' => 'content',
+      'pages' => '',
+      'cache' => -1,
+      'title' => '<none>',
+    ),
+  );
+  $fields = array(
+    'module',
+    'delta',
+    'theme',
+    'status',
+    'weight',
+    'region',
+    'pages',
+    'cache',
+    'title',
+  );
+  $query = db_insert('block')->fields($fields);
+  foreach ($blocks as $block) {
+    $query->values($block);
+  }
+  $query->execute();
+}
+
+/**
+ * Tasks to run at the end of the installation process.
+ *
+ * The "first pass" install just let profiler install what it knows about,
+ * now we have some content to install and some content-dependent menu items
+ * to fiddle with.
+ */
+function deploy_demo_install_profile_complete() {
+
+  require_once dirname(__FILE__) . '/deploy_demo.install.inc';
+
+  // Deploy static blocks as Boxes content.
+  //_acumed_install_boxes_content();
+
+  // Deploy entities and their associated references.
+  _deploy_demo_install_uuid_content();
+
+}
+
+/**
+ * Set us as the default install profile, remove defaults and OpenSourcery.
+ */
+function system_form_install_select_profile_form_alter(&$form, $form_state) {
+  unset($form['profile']['Minimal'], $form['profile']['Standard'], $form['profile']['OpenSourcery']);
+  foreach ($form['profile'] as $key => $element) {
+    $form['profile'][$key]['#value'] = 'deploy_demo';
+  }
+}
+
+/**
+ * Implements of hook_form_FORM_ID_alter().
+ *
+ * Set defaults on "Configure site" form during installation.
+ */
+function deploy_demo_form_install_configure_form_alter(&$form, $form_state) {
+  $server_name = $_SERVER['SERVER_NAME'];
+
+  // Pre-populate the site name with the server name.
+  $form['site_information']['site_name']['#default_value']    = $server_name;
+}

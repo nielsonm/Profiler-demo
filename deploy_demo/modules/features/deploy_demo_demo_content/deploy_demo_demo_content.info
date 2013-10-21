@@ -1,0 +1,17 @@
+name = Deploy Demo Demo Content
+description = Deploy-UUID fetch-only deployment plan.
+core = 7.x
+package = Features
+version = 7.x-0.1
+project = deploy_demo_demo_content
+dependencies[] = ctools
+dependencies[] = deploy
+dependencies[] = deploy_auto_plan
+dependencies[] = entity_menu_links
+dependencies[] = strongarm
+features[ctools][] = deploy:deploy_plans:1
+features[ctools][] = strongarm:strongarm:1
+features[deploy_plans][] = demo_content
+features[features_api][] = api:2
+features[uuid_entities][] = demo_content
+features[variable][] = deploy_auto_plan_name
